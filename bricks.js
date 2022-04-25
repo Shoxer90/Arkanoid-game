@@ -1,7 +1,5 @@
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
 
 export function BrickCreator (x,y,width,height,fillStyle){
     this.x = x;
@@ -17,7 +15,6 @@ export function BrickCreator (x,y,width,height,fillStyle){
 
 };
 
-
 export function drowBrick(quantity){
     let w = window.innerWidth /12;
     let h = w * 0.6;
@@ -31,7 +28,6 @@ export function drowBrick(quantity){
         }
     };
     bricket.forEach((item) =>{ 
-        console.log(item.id)
         item.render();
     })
 };

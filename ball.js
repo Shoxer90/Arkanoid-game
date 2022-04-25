@@ -1,21 +1,29 @@
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
 
 
 export const ball = {
-    x : window.innerWidth/2,
-    y : window.innerHeight/1.2,
-    width : window.innerWidth*0.025,
+    replaceX: 0,
+    replaceY: 0,
+    x: 350,
+    //  window.innerWidth/2,
+    y :  440,
+    //  window.innerHeight*0.93 - window.innerWidth*0.025,
+    width : 25,
+    //  window.innerWidth*0.025,
     height : 0,
     id : "ball",   
     pi : Math.PI*2,
     fillStyle : 'red',
+    drow : function(){
+        this.x+=this.replaceX;
+        this.y+=this.replaceY;
+        context.fillStyle = this.fillStyle;
+        context.arc(this.x, this.y, this.width, this.height, this.pi, this.id );
+        // context.clearRect(0,0,canvas.width, canvas.height)
+        context.fill();
+    }
 };
 
-export function drowBall(){
- context.fillStyle = ball.fillStyle;
- context.arc(ball.x, ball.y, ball.width, ball.height, ball.pi, ball.id )
- context.fill()
-}
+
+

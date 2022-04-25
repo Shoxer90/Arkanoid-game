@@ -1,19 +1,23 @@
 const canvas = document.getElementById('canvas');
 const context = canvas.getContext('2d');
-canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
 
-export const paddle = { 
-    replaceX: 5,
+export const paddle = {
+    replaceX: 0,
     replaceY: 0,
-    x : window.innerWidth/2 - window.innerWidth*0.15, //left
-    y: 600 ,    //down
-    width: window.innerWidth*0.3,
-    height:window.innerWidth*0.06,
+    x :  250,
+    //  window.innerWidth/2 - window.innerWidth*0.15, //left
+    y: 470, 
+    // window.innerHeight*0.93 ,    //down
+    width: 200, 
+    // window.innerWidth*0.3,
+    height: 30,
+    // window.innerWidth*0.06,
     fillStyle: 'blue', 
-}
+    drow: function () {
+        this.x += this.replaceX ;
+        context.fillStyle = this.fillStyle;
+        context.fillRect(this.x, this.y, this.width, this.height);
+    },
 
-export function drowPaddle() {
-    context.fillStyle = paddle.fillStyle;
-    context.fillRect(paddle.x, paddle.y, paddle.width, paddle.height);
-}
+};
+
