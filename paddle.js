@@ -13,11 +13,5 @@ export const paddle = {
     height: 30,
     // window.innerWidth*0.06,
     fillStyle: 'blue', 
-    drow: function () {
-        this.x += this.replaceX ;
-        context.fillStyle = this.fillStyle;
-        context.fillRect(this.x, this.y, this.width, this.height);
-    },
-
 };
 
